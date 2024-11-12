@@ -33,7 +33,7 @@
 3. Ключ с расширением `.pub` - публичный, его надо добавить на сервер. Либо какой-то утилитой "Добавить SSH-ключ", если хостинг продвинутый, либо вручную:
 Добавить ключ в конец файла `~/.ssh/authorized_keys`
 4. Ключ без расширения - приватный, его добавить надо в github secrets.
-   1. * Если хочется серьезной безопасности, то необходимо отключить подключение по паролю через ssh:
+   1. Если хочется серьезной безопасности, то необходимо отключить подключение по паролю через ssh:
 В файле `/etc/ssh/sshd_config` изменить `PasswordAuthentication` на `PasswordAuthentication no`.
 5. Установить docker с docker compose (ref -[официальная инструкция](https://docs.docker.com/engine/install/centos/) :
 ```bash
@@ -51,6 +51,7 @@ sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 sudo systemctl start docker
 ```
 Можно проверить успех мероприятия командой `sudo docker run hello-world`
+
 6. Готово! можно запускать action [Build on PROD](https://github.com/Ligerina/TelegramBot/actions/workflows/deploy-on-prod.yml)
 
 ## Pipeline
